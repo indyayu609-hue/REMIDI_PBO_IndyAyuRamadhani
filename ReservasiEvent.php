@@ -12,9 +12,8 @@ class ReservasiEvent extends Reservasi {
         $this->biayaTransportasiTim = $biayaTransportasiTim;
     }
 
-    // Implementasi metode abstrak
+    // TAHAP 5: Method Overriding dengan logika bisnis baru (Tarif durasi + Biaya Transportasi)
     public function hitungTotalBiaya() {
-        // Biaya dasar ditambah biaya transportasi tim ke lokasi luar
         return ($this->durasiJam * $this->tarifDasarPerJam) + $this->biayaTransportasiTim;
     }
 

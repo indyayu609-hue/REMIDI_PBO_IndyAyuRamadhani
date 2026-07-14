@@ -12,10 +12,10 @@ class ReservasiReguler extends Reservasi {
         $this->cetakFotoLembar = $cetakFotoLembar;
     }
 
-    // Implementasi metode abstrak
+    // TAHAP 5: Method Overriding dengan logika bisnis baru (Biaya Flat Kamera Rp 50.000)
     public function hitungTotalBiaya() {
-        // Misal: biaya dasar ditambah biaya cetak foto (Rp 5.000 per lembar)
-        return ($this->durasiJam * $this->tarifDasarPerJam) + ($this->cetakFotoLembar * 5000);
+        $biayaFlatKamera = 50000;
+        return ($this->durasiJam * $this->tarifDasarPerJam) + $biayaFlatKamera;
     }
 
     public function tampilkanSpesifikasiPaket() {
@@ -25,7 +25,7 @@ class ReservasiReguler extends Reservasi {
     }
 
     // Method query SELECT-WHERE
-    public function dapatkanDataReguler DariDB($koneksi, $id) {
+    public function dapatkanDataRegulerDariDB($koneksi, $id) {
         $query = "SELECT id_reservasi, nama_pelanggan, tanggal_booking, durasi_jam, tarif_dasar_per_jam, tipe_background, cetak_foto_lembar 
                   FROM tabel_reservasi 
                   WHERE id_reservasi = $id AND jenis_paket = 'Reguler'";

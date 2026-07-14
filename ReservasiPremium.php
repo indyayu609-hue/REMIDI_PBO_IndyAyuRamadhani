@@ -12,10 +12,11 @@ class ReservasiPremium extends Reservasi {
         $this->layananMakeup = $layananMakeup;
     }
 
-    // Implementasi metode abstrak
+    // TAHAP 5: Method Overriding dengan logika bisnis baru (Surcharge Layanan 20%)
     public function hitungTotalBiaya() {
-        // Misal: biaya dasar ditambah biaya talent (Rp 100.000 per orang)
-        return ($this->durasiJam * $this->tarifDasarPerJam) + ($this->kuotaTalentOrang * 100000);
+        $totalDurasi = $this->durasiJam * $this->tarifDasarPerJam;
+        $surcharge = 1.20; 
+        return $totalDurasi * $surcharge;
     }
 
     public function tampilkanSpesifikasiPaket() {
